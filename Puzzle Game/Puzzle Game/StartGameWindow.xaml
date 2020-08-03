@@ -1,0 +1,84 @@
+﻿<Window x:Class="Puzzle_Game.StartGameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Puzzle_Game"
+        Icon="/Images/Background/ph.ico"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
+        Height="550" Width="800" WindowStyle="None" >
+
+  
+    <Canvas>
+        <Grid x:Name="_boardGrid" Background="Black" Canvas.Left="50" Canvas.Top="100" Width="690" Height="350" Panel.ZIndex="2"/>
+        <Canvas x:Name="_congratsCanvas" Canvas.Top="-550" Width="800" Height="550" Background="Black" Panel.ZIndex="2">
+            <Image Height="400" Width="800" Stretch="Fill" Source="/Images/Background/CONGRATULATIONS.png"/>
+            <Button Click="OKButton_Click" Width="150" Height="60" Canvas.Left="330" Canvas.Top="450" Background="Transparent">
+                <Button.Content>
+                    <Image Source="/Images/Background/OK.png"/>
+                </Button.Content>
+            </Button>
+        </Canvas>
+        <Canvas x:Name="_backGround1" Width="800" Height="550" Canvas.Left="0" Canvas.Top="0">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/Images/Background/Theme.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas  x:Name="_backGround2" Width="800" Height="550" Canvas.Left="800" Canvas.Top="0">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/Images/Background/Theme.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <Grid Canvas.Left="0" Canvas.Top="0" Width="800" Height="95">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Images/Background/ROUND.png" Grid.Column="0" Grid.Row="0"/>
+            <Image Source="/Images/Background/DIFFICULTY.png" Grid.Column="0" Grid.Row="1"/>
+            <Image Source="/Images/Background/ENDLESS.png" Grid.Column="1" Grid.Row="0"/>
+            <Image x:Name="_setDifficultyImage" Source="/Images/Background/EASY.png" Grid.Column="1" Grid.Row="1"/>
+            <Button Click="ExitButton_Click" Height="60" Width="100" Grid.Column="5" Grid.Row="0" Grid.RowSpan="2" Background="Transparent">
+                <Button.Content>
+                    <Image Source="/Images/Background/X-.png"/>
+                </Button.Content>
+            </Button> 
+            <Label x:Name="_timerLabel" Width="150" Height="60" Content="00:00"
+                   FontSize="30" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2"
+                   FontFamily="Rockwell Extra Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                   Foreground="Black"   FontWeight="Bold" >
+                <Label.Background>
+                    <ImageBrush ImageSource="/Images/Background/scoreboard.png"/>
+                </Label.Background>
+            </Label>
+        </Grid>
+       
+        <Grid Canvas.Left="0" Canvas.Top="450" Width="800" Height="95">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Click="GiveUpButton_Click" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Width="200" Background="Transparent">
+                <Button.Content>
+                    <Image Source="/Images/Background/GIVE-UP.png"/>
+                </Button.Content>
+            </Button>
+        </Grid>
+    </Canvas>
+</Window>
